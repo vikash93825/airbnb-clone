@@ -3,6 +3,7 @@ import AccountNav from "../AccountNav";
 import axios from "axios";
 import { differenceInCalendarDays, format } from "date-fns";
 import { Link } from "react-router-dom";
+import Image from "../Image";
 
 export default function BookingsPage() {
   const [bookings, setBookings] = useState([]);
@@ -23,12 +24,9 @@ export default function BookingsPage() {
             >
               <div className="w-48 py-4 pl-2">
                 {booking.place.photos?.length > 0 && (
-                  <img
+                  <Image
                     className="object-cover"
-                    src={
-                      "http://localhost:4000/uploads/" +
-                      booking.place.photos?.[0]
-                    }
+                    src={booking.place.photos?.[0]}
                     alt=""
                   />
                 )}
